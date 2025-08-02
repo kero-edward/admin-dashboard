@@ -1,0 +1,38 @@
+<button type="button" class="btn btn-outline-primary my-3 text-capitalize" (click)="addProduct()">add product</button>
+<div class="table-responsive overflow-y-auto" style="max-height: 92vh;">
+  <table class="table table-success table-striped mb-0">
+    <thead class="table-header">
+      <tr>
+        <th scope="col" class="text-capitalize">#</th>
+        <th scope="col" class="text-capitalize">name</th>
+        <th scope="col" class="text-capitalize">description</th>
+        <th scope="col" class="text-capitalize">image</th>
+        <th scope="col" class="text-capitalize">category</th>
+        <th scope="col" class="text-capitalize">price</th>
+        <th scope="col" class="text-capitalize">actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>
+          <img [src]="product.image" [alt]="product.name" width="100" height="100" />
+        </td>
+        <td>{{ product.category }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <div class="bg-danger-subtle d-inline-block p-1 rounded-3" style="cursor: pointer;"
+            (click)="deleteProduct(product.name)">
+            <i class="fa-solid fa-trash text-danger"></i>
+          </div>
+          <div class="bg-primary-subtle d-inline-block p-1 rounded-3" style="cursor: pointer;"
+            (click)="editProduct(product)">
+            <i class="fa-solid fa-pen text-primary"></i>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

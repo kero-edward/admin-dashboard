@@ -1,0 +1,28 @@
+@use "@angular/material" as mat;
+@include mat.core();
+
+$admin-dashboard-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette
+    ),
+    density: (
+      scale: 0
+    )
+  )
+);
+
+:root {
+  @include mat.all-component-themes($admin-dashboard-theme);
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-mdc-form-field-subscript-wrapper.mat-mdc-form-field-bottom-align {
+  display: none !important;
+}

@@ -1,0 +1,6 @@
+.table-header th {
+  position: sticky;
+  top: 0;
+  background-color: #d1e7dd; /* match thead background */
+  z-index: 10;
+}
